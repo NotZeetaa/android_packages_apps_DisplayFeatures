@@ -57,7 +57,7 @@ public class DisplayFeaturesDcDimTileService extends TileService {
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
         final boolean enabled = !(sharedPrefs.getBoolean(mConfig.DISPLAYFEATURES_DC_DIMMING_KEY, false));
 
-        FileUtils.writeLine(mConfig.getDcDimPath(), enabled ? "1" : "0");
+        FileUtils.writeLine(mConfig.getDcDimPath(), enabled ? "0xF00" : "0xE00");
         sharedPrefs.edit().putBoolean(mConfig.DISPLAYFEATURES_DC_DIMMING_KEY, enabled).commit();
         updateUI(enabled);
     }

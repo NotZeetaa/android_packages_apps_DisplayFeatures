@@ -55,7 +55,7 @@ public class DisplayFeaturesHbmTileService extends TileService {
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
         final boolean enabled = !(sharedPrefs.getBoolean(mConfig.DISPLAYFEATURES_HBM_KEY, false));
 
-        FileUtils.writeLine(mConfig.getHbmPath(), enabled ? "1" : "0");
+        FileUtils.writeLine(mConfig.getHbmPath(), enabled ? "0x10000" : "0xF0000");
         sharedPrefs.edit().putBoolean(mConfig.DISPLAYFEATURES_HBM_KEY, enabled).commit();
         updateUI(enabled);
     }

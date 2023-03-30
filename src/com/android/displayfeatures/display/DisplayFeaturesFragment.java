@@ -60,10 +60,10 @@ public class DisplayFeaturesFragment extends PreferenceFragment implements
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (mConfig.DISPLAYFEATURES_DC_DIMMING_KEY.equals(preference.getKey())) {
-            FileUtils.writeLine(mConfig.getDcDimPath(), (Boolean) newValue ? "1":"0");
+            FileUtils.writeLine(mConfig.getDcDimPath(), (Boolean) newValue ? "0xF00":"0xE00");
         }
         if (mConfig.DISPLAYFEATURES_HBM_KEY.equals(preference.getKey())) {
-            FileUtils.writeLine(mConfig.getHbmPath(), (Boolean) newValue ? "1" : "0");
+            FileUtils.writeLine(mConfig.getHbmPath(), (Boolean) newValue ? "0x10000" : "0xF0000");
         }
         return true;
     }
