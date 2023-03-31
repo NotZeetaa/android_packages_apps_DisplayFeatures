@@ -35,9 +35,11 @@ public class DisplayFeaturesConfig {
 
     public static final String DISPLAYFEATURES_DC_DIMMING_KEY = "dc_dimming";
     public static final String DISPLAYFEATURES_HBM_KEY = "hbm";
+    public static final String DISPLAYFEATURES_BACKLIGHT = "backlight";
 
     private final String config_DisplayFeaturesDcDimPath;
     private final String config_DisplayFeaturesHbmPath;
+    private final String config_DisplayFesturesBacklightPath;
 
     private DisplayFeaturesConfig(Context context) {
 
@@ -45,6 +47,7 @@ public class DisplayFeaturesConfig {
 
 	config_DisplayFeaturesDcDimPath = res.getString(R.string.config_DisplayFeaturesDcDimPath);
 	config_DisplayFeaturesHbmPath = res.getString(R.string.config_DisplayFeaturesHbmPath);
+	config_DisplayFesturesBacklightPath = res.getString(R.string.config_DisplayFeaturesBacklightPath);
 
     }
 
@@ -54,5 +57,9 @@ public class DisplayFeaturesConfig {
 
      public String getHbmPath() {
         return config_DisplayFeaturesHbmPath;
+    }
+    
+    public String getBacklightPath() {
+        return config_DisplayFesturesBacklightPath;
     }
  }

@@ -64,6 +64,7 @@ public class DisplayFeaturesFragment extends PreferenceFragment implements
         }
         if (mConfig.DISPLAYFEATURES_HBM_KEY.equals(preference.getKey())) {
             FileUtils.writeLine(mConfig.getHbmPath(), (Boolean) newValue ? "0x10000" : "0xF0000");
+            FileUtils.writeLine(mConfig.getBacklightPath(), (Boolean) newValue ? "2047" : "2047");
         }
         return true;
     }
